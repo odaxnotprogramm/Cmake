@@ -11,6 +11,21 @@ void main() {
   printf("Enter the number of columns of the second matrix: ");
   scanf("%d", &secondMatrixColSize);
   
+while (firstMatrixColSize > 50 || firstMatrixRowSize > 50 ||
+secondMatrixColSize > 50 || secondMatrixRowSize > 50) {
+    printf("\nMultiplication is not possible!\n");
+    printf("Matrix colums and rows must be less than 50!\n");
+
+    printf("Enter the number of rows of the first matrix: ");
+    scanf("%d", &firstMatrixRowSize);
+    printf("Enter the number of columns of the first matrix: ");
+    scanf("%d", &firstMatrixColSize);
+    printf("Enter the number of rows of the second matrix: ");
+    scanf("%d", &secondMatrixRowSize);
+    printf("Enter the number of columns of the second matrix: ");
+    scanf("%d", &secondMatrixColSize);
+  }
+
   while (firstMatrixColSize != secondMatrixRowSize) {
     printf("\nMultiplication is not possible!\n");
     printf("Please, enter the right data!\n");
@@ -20,27 +35,48 @@ void main() {
     scanf("%d", &secondMatrixRowSize);
   }
   
-  int firstMatrix [50][50];
-  int secondMatrix[50][50];
-  int resMatrix[50][50];
+  double firstMatrix [50][50];
+  double secondMatrix[50][50];
+  double resMatrix[50][50];
   
+  /*INPUT MATRIX*/
   printf("\nEnter the elements of the first matrix:\n");
   for (int i = 0; i < firstMatrixRowSize; i++) {
     for (int j = 0; j < firstMatrixColSize; j++) {
-      scanf("%d", &firstMatrix[i][j]);
+      scanf("%lf", &firstMatrix[i][j]);
     }
   }
   
   printf("\nEnter the elements of the second matrix: \n");
   for (int i = 0; i < secondMatrixRowSize; i++) {
     for (int j = 0; j < secondMatrixColSize; j++) {
-      scanf("%d", &secondMatrix[i][j]);
+      scanf("%lf", &secondMatrix[i][j]);
     }
   }
+
+/*OUTPUT MATRIX*/
+  printf("\nThe elements of the first matrix:\n");
+  for (int i = 0; i < firstMatrixRowSize; i++) {
+    printf("|");
+    for (int j = 0; j < firstMatrixColSize; j++) {
+      printf("%4lf ", &firstMatrix[i][j]);
+    }
+    printf("|\n");
+  }
+
+  printf("\nThe elements of the second matrix: \n");
+  for (int i = 0; i < secondMatrixRowSize; i++) {
+    printf("|");
+    for (int j = 0; j < secondMatrixColSize; j++) {
+      printf("%4lf ", &secondMatrix[i][j]);
+    }
+    printf("|\n");
+  }
   
+  /*RESULT*/
   for (int i = 0; i < firstMatrixRowSize; i++) {
     for (int j = 0; j < secondMatrixColSize; j++) {
-      resMatrix[i][j] = 0;
+      resMatrix[i][j] = 0.0;
       for (int k = 0; k < firstMatrixColSize; k++)
         resMatrix[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
     }
@@ -49,7 +85,7 @@ void main() {
   printf("\nResult matrix: \n");
   for (int i = 0; i < firstMatrixRowSize; i++) {
     for (int j = 0; j < secondMatrixColSize; j++) {
-        printf("%d ", resMatrix[i][j]);
+        printf("%.2lf ", resMatrix[i][j]);
     }
     printf("\n");
   }
