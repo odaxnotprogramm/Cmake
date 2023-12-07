@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 void main() {
@@ -35,7 +36,7 @@ secondMatrixColSize > 50 || secondMatrixRowSize > 50) {
     scanf("%d", &secondMatrixRowSize);
   }
   
-  double firstMatrix [50][50];
+  double firstMatrix[50][50];
   double secondMatrix[50][50];
   double resMatrix[50][50];
   
@@ -57,18 +58,18 @@ secondMatrixColSize > 50 || secondMatrixRowSize > 50) {
 /*OUTPUT MATRIX*/
   printf("\nThe elements of the first matrix:\n");
   for (int i = 0; i < firstMatrixRowSize; i++) {
-    printf("|");
+    printf("| ");
     for (int j = 0; j < firstMatrixColSize; j++) {
-      printf("%4lf ", &firstMatrix[i][j]);
+      printf("%4.2lf ", firstMatrix[i][j]);
     }
     printf("|\n");
   }
 
   printf("\nThe elements of the second matrix: \n");
   for (int i = 0; i < secondMatrixRowSize; i++) {
-    printf("|");
+    printf("| ");
     for (int j = 0; j < secondMatrixColSize; j++) {
-      printf("%4lf ", &secondMatrix[i][j]);
+      printf("%4.2lf ", secondMatrix[i][j]);
     }
     printf("|\n");
   }
