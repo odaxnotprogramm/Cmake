@@ -12,10 +12,12 @@ void main() {
   printf("Enter the number of columns of the second matrix: ");
   scanf("%d", &secondMatrixColSize);
   
-while (firstMatrixColSize > 50 || firstMatrixRowSize > 50 ||
-secondMatrixColSize > 50 || secondMatrixRowSize > 50) {
+while (firstMatrixColSize > 50 || firstMatrixColSize < 0 ||
+ firstMatrixRowSize > 50 || firstMatrixRowSize < 0 ||
+secondMatrixColSize > 50 || secondMatrixColSize < 0 || 
+secondMatrixRowSize > 50 || econdMatrixRowSize < 0) {
     printf("\nMultiplication is not possible!\n");
-    printf("Matrix colums and rows must be less than 50!\n");
+    printf("Matrix colums and rows should be less than 50 and more than 0!\n");
 
     printf("Enter the number of rows of the first matrix: ");
     scanf("%d", &firstMatrixRowSize);
