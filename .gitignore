@@ -2,6 +2,8 @@ CMakeFiles/
 Debug/
 main.dir/
 x64/
+.vs/
+.vscode/
 
 CMakeCache.txt
 main.sln
