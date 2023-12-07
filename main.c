@@ -15,7 +15,7 @@ void main() {
 while (firstMatrixColSize > 50 || firstMatrixColSize < 0 ||
  firstMatrixRowSize > 50 || firstMatrixRowSize < 0 ||
 secondMatrixColSize > 50 || secondMatrixColSize < 0 || 
-secondMatrixRowSize > 50 || econdMatrixRowSize < 0) {
+secondMatrixRowSize > 50 || secondMatrixRowSize < 0) {
     printf("\nMultiplication is not possible!\n");
     printf("Matrix colums and rows should be less than 50 and more than 0!\n");
 
